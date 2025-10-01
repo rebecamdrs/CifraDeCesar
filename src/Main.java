@@ -10,8 +10,17 @@ public class Main {
         System.out.print("Digite o texto: ");
         String texto = scanner.nextLine();
 
-        System.out.print("Digite o deslocamento (0 - 25): ");
-        int deslocamento = scanner.nextInt();
+        int deslocamento = 3; // deslocamento padrao
+        while (true) {
+            System.out.print("Digite o deslocamento (0 - 25): ");
+            deslocamento = scanner.nextInt();
+            if (deslocamento > 25 || deslocamento < 0) {
+                System.out.print("ERRO! Digite um deslocamento válido.");
+            } else {
+                break;
+            }
+        }
+
         scanner.nextLine();
 
         String acao;
@@ -19,7 +28,7 @@ public class Main {
             System.out.print("Ação (c: criptografar, d: descriptografar): ");
             acao = scanner.nextLine();
             if (!acao.equalsIgnoreCase("c") && !acao.equalsIgnoreCase("d")) {
-                System.out.print("ERRO! Escolha uma ação válida!");
+                System.out.print("ERRO! Escolha uma ação válida.");
             } else {
                 break;
             }
